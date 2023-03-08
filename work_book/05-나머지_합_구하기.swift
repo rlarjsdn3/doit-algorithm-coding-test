@@ -16,8 +16,8 @@ for i in array {
 
 var rArray = [Int](repeating: 0, count: m)
 // 나머지 배열 계산하기
-for i in 0..<n {
-    let remainder = hArray[i] % m
+for i in hArray {
+    var remainder = i % m
     if remainder == 0 {
         result += 1
     }
@@ -25,8 +25,8 @@ for i in 0..<n {
 }
 
 // 경우의 수 계산하기
-for i in 0..<m {
-    result += (rArray[i] * (rArray[i] - 1)) / 2
+for i in rArray {
+    result += (i * (i-1)) / 2
 }
 
 // 결과값 출력하기
