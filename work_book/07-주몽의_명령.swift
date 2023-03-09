@@ -12,20 +12,20 @@ array.sort()
 // 결과값을 저장하기 위한 변수
 var result = 0
 // 시작점과 끝점 정의
-var start = 0, end = array.count - 1
+var i = 0, j = array.count - 1
 
-while start < end {
-    let total = array[start] + array[end]
+while i < j {
+    let total = array[i] + array[j]
     
     // 두 개의 재료 번호의 합이 M보다 작으면
     if total < m {
-        start += 1 // 시작점 증가
+        i += 1 // 시작점 증가
     } else {
         // 두 개 재료 번호의 합이 M과 같으면
         if total == m {
             result += 1
         }
-        end -= 1 // 끝점 감소
+        j -= 1 // 끝점 감소
     }
 }
 // 결과값 출력하기
