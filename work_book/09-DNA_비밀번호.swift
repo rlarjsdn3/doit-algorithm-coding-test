@@ -7,34 +7,23 @@ extension String {
     }
 }
 
-// Arithmetic 열거체
-enum Operation {
-    case positive
-    case negative
-    
-    var value: Int {
-        switch self {
-        case .positive:
-            return +1
-        case .negative:
-            return -1
-        }
-    }
-    
-    /// 연관된 값(RawValue)를 사용할 수 있지만, 코드 가독성을 고려해 직접 계산 프로퍼티(Computed Property)로 정의함
+// Operation 열거체
+enum Operation: Int {
+    case positive =  1
+    case negative = -1
 }
 
 // 각 문자를 확인하여 카운팅하는 함수
 func countACGT(_ element: String, operation: Operation) {
     switch element {
     case "A":
-        count.a += operation.value
+        count.a += operation.rawValue
     case "C":
-        count.c += operation.value
+        count.c += operation.rawValue
     case "G":
-        count.g += operation.value
+        count.g += operation.rawValue
     case "T":
-        count.t += operation.value
+        count.t += operation.rawValue
     default:
         break
     }
